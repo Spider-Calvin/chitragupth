@@ -6,22 +6,33 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:mobile": "npm run build && npx cap sync",
+    "ios": "npm run build:mobile && npx cap run ios",
+    "android": "npm run build:mobile && npx cap run android"
   },
   "dependencies": {
+    "@capacitor/android": "^8.0.0-alpha.1",
+    "@capacitor/app": "^7.0.2",
+    "@capacitor/core": "^8.0.0-alpha.1",
+    "@capacitor/haptics": "^7.0.2",
+    "@capacitor/ios": "^8.0.0-alpha.1",
+    "@capacitor/splash-screen": "^7.0.2",
+    "@capacitor/status-bar": "^7.0.2",
+    "@supabase/supabase-js": "^2.55.0",
+    "next": "15.5.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.0"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
